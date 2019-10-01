@@ -1,0 +1,9 @@
+header {
+	background-color: #c0c0c0;
+}
+#splash {
+	text-align: center;
+	background: url("../images/side_bend.jpeg") no-repeat;
+	background-size: cover;
+	height: 1000px;
+}
