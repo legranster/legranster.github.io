@@ -114,11 +114,11 @@ li {
 	height:0;
 	font-size:0;
 }
-	#splash {
-		background: url("../images/splash_img.jpg") no-repeat;
-		background-position: center;
-		background-size: cover;
-		height: 90vh;
-		text-align:right;
-		padding: 10em 2em;
-	}
+#splash {
+	background: url("../images/splash_img.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 90vh;
+	text-align:right;
+	padding: 10em 2em;
+}

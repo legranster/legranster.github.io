@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:400,700|Muli&display=swap');
+@import url("https://use.typekit.net/bpn3zhn.css");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+}
+body {
+	font-family: "Muli", sans-serif;
+	font-size: 16px;
+	line-height:1.5em;
+	text-align: center;
+	margin: auto;
+	background-color: #D8D8D8;
+}
+nav {
+	text-align: center;
+}
+h1{
+	font-family:"Tenso", bold;
+	font-size: 64px;
+	line-height:1em;
+	text-align:right;
+	margin-right:0.5em;
+}
+h2{
+	font-family:"Be Vietnam", bold;
+	font-size: 40px;
+	line-height: 1.5em;
+	margin-bottom:1em;
+	margin-right:0.5em;
+	padding: 0 4em;
+	text-align: center;
+	padding:2em 0 0 0;
+}
+img {
+	margin: auto;
+	width:100%;
+	line-height:0;
+}
+header {
+	margin-top:1em;
+}
+a {
+	text-decoration:none;
+	color:#005ab9;
+}
+p{
+	text-align:left;
+	margin:0 auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 0 4em;
+	max-width:40em;
+}
+ul {
+	margin: 0 auto;
+	padding: 0 4em;
+	max-width:40em;
+}
+li {
+	text-align:left;
+	margin:0 auto;
+	padding: 0 4em;
+	max-width:40em;
+}
+.leftcolumn {
+	width:50%;
+	float:left;
+}
+.rightcolumn{
+	width:50%;
+	float:right;
+}
+.logo {
+	width:10em;
+	margin: 0 auto;
+	float:left;
+}
+.navlinks{
+	font-family:"Be Vietnam", bold;
+	padding:1em 2em;
+	color:#005ab9;
+	display:block;
+	float:right;
+}
+.cta{
+	font-family:"Be Vietnam", bold;
+	text-transform: uppercase;
+	color: black;
+	background-color: #0A9FD1;
+	padding: 2em;
+}
+.navlinks:hover{
+	background-color:white;
+	color:rgba(0,0,0,0.8);
+}
+.slogan {
+	font-weight:400;
+	margin-top:1em;
+	margin-bottom:2em;
+	text-align:right;
+	padding: 0;
+}
+.headshot {
+	margin: 2em 0 1em 0;
+	width:250px;
+}
+.moreinfo{
+	text-align:center;
+}
+.sectionimage{
+	display:block;
+}
+.iglogo {
+	width:4em;
+	margin:2em;
+}
+.clearfix:after{
+	visibility:hidden;
+	display:block;
+	content: " ";
+	clear:both;
+	height:0;
+	font-size:0;
+}
+#splash {
+	background: url("../images/splash_img.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 90vh;
+	text-align:right;
+	padding: 10em 2em;
+}
+#bio {
+	background-color: white;
+}
+#why-pilates{
+	background-color:white;
+}
