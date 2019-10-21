@@ -43,7 +43,7 @@ header {
 }
 a {
 	text-decoration:none;
-	color:#005ab9;
+	color:#1F8074;
 }
 p{
 	text-align:left;
@@ -54,15 +54,24 @@ p{
 	max-width:40em;
 }
 ul {
-	margin: 0 auto;
-	padding: 0 4em;
+	margin: 2em auto;
+	padding: 0 6em;
 	max-width:40em;
 }
 li {
 	text-align:left;
 	margin:0 auto;
-	padding: 0 4em;
 	max-width:40em;
+}
+footer{
+	margin:2em auto;
+}
+hr{
+	background-color: #1F8074;
+	border:0;
+	width: 10em;
+	margin: 0 auto;
+	height: 0.5em;
 }
 .leftcolumn {
 	width:50%;
@@ -80,20 +89,20 @@ li {
 .navlinks{
 	font-family:"Be Vietnam", bold;
 	padding:1em 2em;
-	color:#005ab9;
+	color:#1F8074;
 	display:block;
 	float:right;
 }
 .cta{
 	font-family:"Be Vietnam", bold;
 	text-transform: uppercase;
-	color: black;
-	background-color: #0A9FD1;
+	color: white;
+	background-color: #1F8074;
 	padding: 2em;
 }
 .navlinks:hover{
-	background-color:white;
-	color:rgba(0,0,0,0.8);
+	background-color:#1F8074;
+	color:white;
 }
 .slogan {
 	font-weight:400;
@@ -132,9 +141,6 @@ li {
 	text-align:right;
 	padding: 10em 2em;
 }
-#bio {
+#about, #where, #testimonials{
 	background-color: white;
-}
-#why-pilates{
-	background-color:white;
 }
