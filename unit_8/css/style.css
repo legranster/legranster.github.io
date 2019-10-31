@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam:400,700|Muli&display=swap');
+@import url("https://use.typekit.net/bpn3zhn.css");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+}
+body {
+	font-family: "Muli", sans-serif;
+	font-size: 16px;
+	line-height:1.5em;
+	text-align: center;
+	margin: auto;
+	background-color: #D8D8D8;
+}
+header {
+	padding:1em 0	4em;
+	background-color:white;
+}
+label{
+	font-family:"Be Vietnam", bold;
+	padding:1em 2em;
+	color:#1F8074;
+	display:inline;
+	display:none;
+}
+label:hover{
+	background-color:#1F8074;
+	color:white;
+}
+nav {
+	text-align: center;
+	float:right;
+	margin:1em 0;
+}
+h1{
+	font-family:"Tenso", bold;
+	font-size: 4em;
+	line-height:1em;
+	text-align:right;
+	margin-right:0.5em;
+}
+.slogan-top{
+	padding-top:1em;
+}
+h2{
+	font-family:"Be Vietnam", bold;
+	font-size: 2.5em;
+	line-height: 1.5em;
+	margin-bottom:1em;
+	margin-right:0.5em;
+	text-align: center;
+	padding:2em 1em 0 1em;
+}
+img {
+	margin: auto;
+	max-width:100%;
+	line-height:0;
+}
+a {
+	text-decoration:none;
+	color:#1F8074;
+}
+p{
+	text-align:left;
+	margin:0 auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	padding: 0 4em;
+	max-width:40em;
+}
+ul {
+	margin: 2em auto;
+	padding: 0 6em;
+}
+li {
+	text-align:left;
+	margin:0 auto;
+}
+footer{
+	margin:2em auto;
+}
+hr{
+	background-color: #1F8074;
+	border:0;
+	width: 10em;
+	margin: 0 auto;
+	height: 0.5em;
+}
+.column {
+	width:50%;
+	float:left;
+}
+.logo {
+	width:10em;
+	margin: 0 auto;
+	float:left;
+}
+nav a{
+	font-family:"Be Vietnam", bold;
+	padding:1em 2em;
+	color:#1F8074;
+	display:inline;
+}
+.cta{
+	font-family:"Be Vietnam", bold;
+	text-transform: uppercase;
+	color: white;
+	background-color: #1F8074;
+	padding: 2em;
+}
+nav a:hover{
+	background-color:#1F8074;
+	color:white;
+}
+.slogan {
+	font-weight:400;
+	margin-top:1em;
+	margin-bottom:2em;
+	text-align:right;
+	padding: 0;
+}
+.testimonials_list{
+	list-style-type: none;
+}
+.testimonials_list > li {
+	width:48%;
+	float:left;
+	padding:1em;
+	margin:1%;
+	min-height:10em;
+	/* background-color: #D8D8D8; */
+}
+/* children of testimonials list */
+.headshot {
+	margin: 2em 0 1em 0;
+	width:250px;
+}
+.moreinfo{
+	text-align:center;
+}
+.sectionimage{
+	display:block;
+}
+.iglogo {
+	width:4em;
+	margin:2em;
+}
+.clearfix:after{
+	visibility:hidden;
+	display:block;
+	content: " ";
+	clear:both;
+	height:0;
+	font-size:0;
+}
+#splash {
+	background: url("../images/new_splash.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 90vh;
+	text-align:right;
+	padding: 0 2em;
+}
+#about, #where, #testimonials{
+	background-color: white;
+}
+#toggle{
+	display:none;
+}
+@media only screen and (max-width:1162px){
+	.column > h2{
+		font-size:2em;
+		padding-top:1em;
+	}
+}
+@media only screen and (max-width:1098px){
+	.testimonials_list > li {
+		width:100%;
+		float:none;
+		min-height:none;
+		max-width:40em;
+		margin: 2% auto;
+	}
+}
+@media only screen and (max-width:944px){
+	.logo{
+		display:none;
+	}
+	nav a{
+		font-size:14px;
+	}
+	#about-image, #why-image{
+		display:none;
+	}
+	#about-text, #why-text{
+		width:100%;
+		margin:0 auto;
+		float:none;
+		padding: 0 0 3em 0;
+	}
+	#where-text{
+		width:100%;
+		float:none;
+	}
+	#where-image{
+		float:none;
+		width:100%;
+	}
+	li{
+		margin: 0 20%;
+	}
+	.no_mobile{
+		display:none;
+	}
+}
+@media only screen and (max-width:688px){
+	nav{
+		display:none;
+		float:none;
+	}
+	#splash{
+		background: url("../images/yoga_mats.jpg") no-repeat;
+		text-align:center;
+	}
+	header{
+		padding:0;
+	}
+	h1, .slogan{
+		text-align:left;
+	}
+	nav a{
+		display:block;
+		width:100%;
+		color:white;
+		background-color:#1F8074;
+		margin:0.5em 0;
+	}
+	nav a:hover{
+		color:#1F8074;
+		background-color:white;
+	}
+	#why{
+		display:none;
+	}
+	label{
+		display: block;
+	}
+	#toggle:checked + nav{
+		display: block;
+	}
+}
+/* @media screen only and (max-width:1100px){
+	SMALLER THAN 1100PX
+} */
+/* @media screen only and (max-width:1100px) and (min-width:500px){
+	SMALLER THAN 1100PX AND LARGER THAN 500PX
+} */
+/* @media screen only and (min-width:500px){
+	SMALLER THAN 1100PX
+} */
