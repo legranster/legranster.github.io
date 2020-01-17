@@ -1,0 +1,21 @@
+.about {
+    width: 90%; 
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.social {
+    max-width: 50px;
+}
+
+.chevron {
+    width: 100px;
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    margin-left: -50px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
