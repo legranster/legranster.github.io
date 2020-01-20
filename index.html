@@ -12,10 +12,10 @@
   </head>
   <body id="home" data-spy="scroll" data-target="#main-nav" data-offset="100">
     <!-- Nav -->
-    <nav class="navbar-expand-lg navbar navbar-dark bg-dark sticky-top" id="main-nav">
+    <nav class="navbar-expand-lg navbar navbar-dark sticky-top" id="main-nav">
         <div class="container">
-            <div>
-                <a class="navbar-brand " href="https://www.teamtreehouse.com" target="_blank">Manuel Legrand</a>
+            <div id="logo" class= "d-flex justify-content-center">
+                <a class="navbar-brand " href="#">ML</a>
             </div>
             <div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
                         <a class="nav-item nav-link" href="#home">Home</a>
                         <a class="nav-item nav-link" href="#projects">Projects</a>
                         <a class="nav-item nav-link" href="#about">About</a>
-                        <a class="nav-item nav-link" href="#contact">Contact</a>
+                        <button type="button" class="btn btn-secondary contact ml-lg-3" id="contact1">Contact</button>
                     </div>
                 </div>
             </div>
@@ -34,29 +34,34 @@
     </nav>
     <!-- /nav -->
     <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid vh-100">
+    <div class="jumbotron jumbotron-fluid vh-100 pt-1" id="jumbotron">
         <div class="container">
           <h1 class="display-2 text-right my-5">Manuel Legrand</h1>
           <p class="lead my-5 text-right">Front-End Web Design</p>
         </div>
         <a href="#projects">
-            <img src="assets/chevron-compact-down.svg" class="d-block chevron">
+            <svg class="bi bi-chevron-compact-down chevron" width="150px" height="100px" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M3.553 8.776a.5.5 0 01.67-.223L10 11.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z" clip-rule="evenodd"/>
+              </svg>
         </a>
     </div>
+    <!-- /jumbotron -->
     <!-- Projects -->
-    <div class="card-deck mb-5" id="projects">
-        <div class="container-fluid">
-            <h2 class="ml-5">Projects</h2>
-            <div class="row">
+    <div class=" py-5" id="projects">
+        <div class="container">
+            <h2 class="ml-5 mt-1">Projects</h2>
+            <div class="row card-deck">
                 <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card">
-                        <a href="projects/gallery/index.html" class="mt-5">
-                            <img src="assets/photo_gallery.svg" class="card-img-top px-5" alt="...">
-                            <div class="card-body text-decoration-none text-body">
-                                <h5 class="card-title">Interactive Photo Gallery</h5>
-                                <p class="card-text">This Photo Gallery project uses JQuery to create a searchable and navigatable photo gallery.</p>
-                            </div>
+                    <div class="card h-100">
+                        <a href="projects/gallery/index.html" class="mt-5 card-pic">
+                            <img src="assets/gallery2.svg" class="card-img-top px-5" alt="Gallery asset info: gallery by Lil Squid from the Noun Project">
                         </a>
+                        <div class="card-body text-decoration-none text-body">
+                            <a href="projects/gallery/index.html" class="mt-5">
+                                <h5 class="card-title">Interactive Photo Gallery</h5>
+                            </a>
+                            <p class="card-text">This project uses JQuery to create a searchable and navigatable photo gallery. It takes advantage of a Lightbox plugin to implement the gallery functionality.</p>
+                        </div>
                         <div class="card-footer">
                           <a href="https://github.com/legranster/fewd_project_5" target="_blank">
                             <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
@@ -65,14 +70,16 @@
                       </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <a href="projects/hangman/index.html" class="mt-5">
-                            <img src="assets/hangman.svg" class="card-img-top px-5" alt="...">
-                            <div class="card-body text-decoration-none text-body">
-                                <h5 class="card-title">Hangman Project</h5>
-                                <p class="card-text">A game built with JavaScript in which contestants must guess the letters in a phrase. 5 wrong guesses and you're out!</ p>
-                            </div>
+                            <img src="assets/hangman.svg" class="card-img-top px-5" alt="Hangman by mynamepong from the Noun Project">
                         </a>
+                        <div class="card-body text-decoration-none text-body">
+                            <a href="projects/hangman/index.html" class="mt-5">
+                                <h5 class="card-title">Hangman Project</h5>
+                            </a>
+                            <p class="card-text">A game built with JavaScript in which contestants must guess the letters in a phrase. 5 wrong guesses and you're out! This project uses JavaScript to implement the game logic.</p>
+                        </div>
                         <div class="card-footer">
                             <a href="https://github.com/legranster/fewd_project_6">
                                 <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
@@ -81,14 +88,16 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <a href="projects/dashboard/index.html" class="mt-5">
-                            <img src="assets/dashboard.svg" class="card-img-top px-5" alt="...">
-                            <div class="card-body text-decoration-none text-body">
-                                <h5 class="card-title">WebApp Dashboard</h5>
-                                <p class="card-text">This project simulates a company's webApp dashboard. It has graphs that track user interaction, a social stats section, a user activity section, a user messaging section, and a customizable settings panel.</p>
-                            </div>
+                            <img src="assets/dashboard.svg" class="card-img-top px-5" alt="Dashboard by Eucalyp from the Noun Project">
                         </a>
+                        <div class="card-body text-decoration-none text-body">
+                            <a href="projects/dashboard/index.html">
+                                <h5 class="card-title">WebApp Dashboard</h5>
+                            </a>
+                            <p class="card-text">This project simulates a company's webApp dashboard. It has graphs that track user interaction, a social stats section, a user activity section, a user messaging section, and a customizable settings panel. It uses JavaScript to handle the graphing application, alerts, employee search, and localstorage. </p>
+                        </div>
                         <div class="card-footer">
                             <a href="https://github.com/legranster/fewd_project_7">
                                 <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
@@ -97,14 +106,16 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <a href="projects/directory/index.html" class="mt-5">
-                            <img src="assets/employee_directory.svg" class="card-img-top px-5" alt="...">
-                            <div class="card-body text-decoration-none text-body">
-                                <h5 class="card-title">Employee Directory</h5>
-                                <p class="card-text">An implementation of an employee directory that uses the Fetch API to request all user info.</p>
-                            </div>
+                            <img src="assets/employee_directory.svg" class="card-img-top px-5" alt="Directory asset info: directory by Graphic Tigers from the Noun Project">
                         </a>
+                        <div class="card-body text-decoration-none text-body">
+                            <a href="projects/directory/index.html">
+                                <h5 class="card-title">Employee Directory</h5>
+                            </a>
+                            <p class="card-text">An implementation of an employee directory that uses the Fetch API to request all user info. Implemented a modal system to display more employee information upon click, search functionality to search for employees via name, and click-through functionality within the modals.</p>
+                        </div>
                         <div class="card-footer">
                             <a href="https://github.com/legranster/fewd_project_8">
                                 <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
@@ -113,14 +124,16 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <a href="projects/jersey_city_pilates/index.html" class="mt-5">
-                            <img src="assets/pilates.svg" class="card-img-top px-5" alt="...">
-                            <div class="card-body text-decoration-none text-body">
-                                <h5 class="card-title">Jersey City Pilates</h5>
-                                <p class="card-text">A static website for Jersey City Pilates, a soon-to-come small business owned by my wife! Jersey City Pilates will deliver professional Pilates instruction right to your door.</p>
-                            </div>
+                            <img src="assets/pilates.svg" class="card-img-top px-5" alt="Pilates asset info: Pilates by Ayub Irawan from the Noun Project">
                         </a>
+                        <div class="card-body text-decoration-none text-body">
+                            <a href="projects/jersey_city_pilates/index.html">
+                                <h5 class="card-title">Jersey City Pilates</h5>
+                            </a>
+                            <p class="card-text">A static website for Jersey City Pilates, a soon-to-come small business owned by my wife! Jersey City Pilates will deliver professional Pilates instruction right to your door.</p>
+                        </div>
                         <div class="card-footer">
                             <a href="https://github.com/legranster/legranster.github.io/tree/master/jersey_city_pilates">
                                 <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
@@ -132,65 +145,90 @@
             </div>
         </div>
     </div>
-        <!-- Gallery asset info: gallery by Lil Squid from the Noun Project -->
-        <!-- Hangman asset info: Hangman by mynamepong from the Noun Project-->
-        <!-- Dashboard asset info: dashboard by Eucalyp from the Noun Project -->
-        <!-- Directory asset info: directory by Graphic Tigers from the Noun Project -->
-        <!-- Pilates asset info: Pilates by Ayub Irawan from the Noun Project -->
+    <!-- /projects -->
     <!-- About -->
     <hr>
     <div class="container py-5" id="about">
         <div class="row">
-            <div class="col-md">
-                <h3>About Manuel</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ad, omnis dolore, repellendus mollitia, alias neque vitae dicta cum quam impedit nobis earum ex iusto at tempore odit accusamus adipisci.</p>
-                <div class="container my-5">
-                    <div class="row d-flex justify-content-md-end justify-content-between">
-                        <div class="col col-md-2">
+            <div class="col-md lightgray">
+                <h2>About Manuel</h2>
+                <p>Manuel is an experienced Agilist looking to make the pivot to Software Development, with some experience in:</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="container my-5 alert alert-dark contactCard">
+                    <div class="row">
+                        <div class="col">
+                            <h5>Contact Information:</h5>
+                        </div>
+                        <div class="container my-3">
+                            <div class="row">
+                                <svg class="bi bi-envelope mx-3" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M16 5H4a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zM4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M2.071 6.243a.5.5 0 01.686-.172L10 10.417l7.243-4.346a.5.5 0 11.514.858L10 11.583 2.243 6.93a.5.5 0 01-.172-.686z" clip-rule="evenodd"/>
+                                  </svg>
+                                  <a href="mailto:fakeemail@fakeaddress.com"><p>fakeemail@fakeaddress.com</p></a>
+                            </div>
+                            <div class="row">
+                                <svg class="bi bi-phone mx-3" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M13 3H7a1 1 0 00-1 1v11a1 1 0 001 1h6a1 1 0 001-1V4a1 1 0 00-1-1zM7 2a2 2 0 00-2 2v11a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7z" clip-rule="evenodd"/>
+                                    <path fill-rule="evenodd" d="M10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                  </svg>
+                                  <a>(787) 241-1552</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-md-start my-3">
+                        <div class="col-2">
                             <a href="https://www.linkedin.com/in/manuel-i-legrand/">
-                                <img class="img-fluid social" src="assets/LI-In-Bug.png">
+                                <img class="img-fluid social" src="assets/LI-In-Bug.png" alt="LinkedIn">
                             </a>
                         </div>
-                        <div class="col col-md-2">
+                        <div class="col-2">
                             <a href="https://www.instagram.com/manuelandjulio/">
-                                <img class="img-fluid social" src="assets/glyph-logo_May2016.png">
+                                <img class="img-fluid social" src="assets/glyph-logo_May2016.png" alt="Instagram">
                             </a>
                         </div>
-                        <div class="col col-md-2">
+                        <div class="col-2">
                             <a href="https://github.com/legranster">
-                                <img class="img-fluid social" src="assets/GitHub-Mark-120px-plus.png">
+                                <img class="img-fluid social" src="assets/GitHub-Mark-120px-plus.png" alt="GitHub">
                             </a>
                         </div>
                     </div>
+                    <div class="row d-flex justify-content-center mt-5">
+                        <button type="button" class="btn btn-secondary btn-lg contact" id="contact2">Contact</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md">
-                <img class="img-fluid img-thumbnail" src="assets/headshot.jpg" alt="Manuel">
+            <div class="col-md d-flex justify-content-center align-items-center">
+                <img class="img-thumbnail" src="assets/headshot.jpg" alt="Manuel">
             </div>
         </div>
     </div>
     <!-- /about -->
-    <!-- contact -->
-    <div class="container my-5">
-        <button type="button" class="btn btn-secondary btn-lg   ">Contact Us</button>
-    </div>
     <!-- footer -->
-    <nav class="navbar-expand-lg navbar navbar-dark bg-dark">
+    <nav class="navbar-expand-lg navbar navbar-dark" id="footer">
         <div class="container">
-            <div>
-                <div class="navbar-nav navbar-expand">
-                    <a class="nav-item nav-link mr-3" href="#projects">Projects</a>
-                </div>
+            <div class="navbar-nav navbar-expand">
+                <a class="nav-item nav-link mr-3" href="#projects">Projects</a>
             </div>
-            <div>
-                <a href="#"><small>Back to Top</small></a>
+            <div class="navbar-nav navbar-expand">
+                <a href="#" class="nav-item nav-link">Back to Top</a>
             </div>
         </div>
     </nav>
       <!-- footer -->
     <!-- Contact Form-->
 
+    <!-- /contact -->
+    <!-- Modal -->
+    <div id="modal"></div>
+    <!-- /modal -->
     <!-- Optional JavaScript -->
+    <script src="js/modal.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
