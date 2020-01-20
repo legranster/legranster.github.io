@@ -4,6 +4,12 @@
 /* Medium blue: #03658C */
 /* Light blue: #049DBF */
 
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+* {
+    font-family: "Questrial", Helvetica, sans-serif;
+}
+
 nav {
     background-color: #03658C;
 }
@@ -117,14 +123,14 @@ html{
     position: fixed;
     background-color: #DAF3FF;
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     max-height: 600px;
     overflow: scroll;
     top: 15%;
     right: 0;
     left: 0;
     margin: auto;
-    padding: 1em;
+    padding: 2em;
 }
 
 #inputName:focus,
