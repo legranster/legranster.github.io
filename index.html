@@ -1,242 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <title>Manuel Legrand</title>
-  </head>
-  <body id="home" data-spy="scroll" data-target="#main-nav" data-offset="100">
-    <!-- Nav -->
-    <nav class="navbar-expand-lg navbar navbar-dark sticky-top" id="main-nav">
-        <div class="container">
-            <div id="logo" class= "d-flex justify-content-center">
-                <a class="navbar-brand " href="#">ML</a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Zheimer Puzzles Evaluation</title>
+</head>
+<body>
+    <h1>Zheimer Puzzles Evaluation Form</h1>
+    <div id="demographics">
+        <div id="demoName">
+            <label for="name">Name: </label>
+            <input type="text" id="name" />
+        </div>
+        <div id="demoAge">
+            <label for="age">Age: </label>
+            <input type="number" id="age" />
+        </div>
+        <div id="demoGender">
+            <label for="gender">Gender: </label>
+            <select name="gender" id="gender">
+                <option value="none">(Select an option)</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="undisclosed">Prefer not to disclose</option>
+            </select>
+        </div>
+        <div id="demoEducation">
+            <label for="education">Education Level: </label>
+            <select name="education" id="education">
+                <option value="none">(Select an option)</option>
+                <option value="highSchool">High School</option>
+                <option value="college">College</option>
+                <option value="gradSchool">Graduate School</option>
+                <option value="phd">Ph.D.</option>
+            </select>
+        </div>
+        <div id="demoDiagnosis">
+            <label for="diagnosis">Diagnosed Cognitive Impairment? </label>
+            <select name="diagnosis" id="diagnosis">
+                <option value="none">(Select an option)</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+        <div id="demoMedications">
+            <label for="meds">If diagnosed, which medication is the subject taking?</label>
+            <input type="text" id="meds" />
+        </div>
+        <button  id="submitDemographics">Continue</button> <br />
+        <p id="error"></p>
+    </div>
+    <div id="step1Instructions">
+        <h1>Step 1: Reflection Test</h1>
+        <h3>Instructions</h3>
+        <ul>
+            <li>(LEER EN SILENCIO) Abra el MEMO Kit. Saque el
+                espejo del botiquín y ubique lo frente al usuario.
+                Espere que el usuario conteste la pregunta antes de
+                continuar a la próxima pregunta. Si el usuario no puede
+                contestar alguna pregunta, pase a la próxima pregunta.
+            </li>
+            <li>Sujete el espejo frente a usted mismo y conteste las
+                siguientes preguntas:
+            </li>
+            <ol>
+                <li>Que ves en el espejo? ¿Quién es la persona en el
+                    reflejo?</li>
+                <li>Mire el espejo y mencione en voz alta 5 objetos
+                    que pueda ver.</li>
+                <li>Suelte el espejo colocándolo frente a usted.
+                    Mencione en voz alta los 5 objetos que menciono
+                    en orden inverso; comenzando con el ultimo
+                    objeto.</li>
+            </ol>
+        </ul>
+        <button id="continueEval">Continue</button>
+    </div>
+    <div id="step1Form">
+        <h1>Evaluation 1: Reflection Test</h1>
+        <div>
+            <h3>Preparation Time (seconds): </h3>
+            <input type="number" id="prepTime">
+        </div>
+        <div>
+            <h3>Evaluation Time (seconds): </h3>
+            <input type="number" id="evalTime">
+        </div>
+        <div>
+            <div>
+                <h3>General Observations: </h3>
+                <select name="generalObservations" id="generalObservations">
+                    <option value="0">(Select an Option)</option>
+                    <option value="4">Recognizes him/herself immediately</option>
+                    <option value="3">Recognized self after less than 5 seconds</option>
+                    <option value="2">Recognized self after more than 5 seconds</option>
+                    <option value="1">Did not recognize self in reflection</option>
+                </select>
             </div>
             <div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#home">Home</a>
-                        <a class="nav-item nav-link" href="#projects">Projects</a>
-                        <a class="nav-item nav-link" href="#about">About</a>
-                        <button type="button" class="btn btn-secondary contact ml-lg-3" id="contact1">Contact</button>
-                    </div>
-                </div>
+                <h3>Instruction Compliance: </h3>
+                <select name="instructionCompliance" id="instructionCompliance">
+                    <option value="0">(Select an Option)</option>
+                    <option value="4">Followed Instructions</option>
+                    <option value="3">Required Repetition of Instructions</option>
+                    <option value="2">Did Not Understand Instructions</option>
+                    <option value="1">Forgot Instructions</option>
+                </select>
+            </div>
+            <div>
+                <h3>Emotional Reaction: </h3>
+                <select name="emotionalReaction" id="emotionalReaction">
+                    <option value="0">(Select an Option)</option>
+                    <option value="4">Enjoyed Exercise</option>
+                    <option value="3">Remained Calm</option>
+                    <option value="2">Unmoved</option>
+                    <option value="1">Frustrated / Angry</option>
+                </select>
+            </div>
+            <div>
+                <h3>Additional Notes: </h3>
+                <input type="text" id="additionalNotes1">
             </div>
         </div>
-    </nav>
-    <!-- /nav -->
-    <!-- Jumbotron -->
-    <div class="jumbotron jumbotron-fluid vh-100 pt-1" id="jumbotron">
-        <div class="container">
-          <h1 class="display-2 text-right my-5">Manuel Legrand</h1>
-          <p class="lead my-5 text-right">Front-End Web Design</p>
-        </div>
-        <a href="#projects">
-            <svg class="bi bi-chevron-compact-down chevron" width="150px" height="100px" viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M3.553 8.776a.5.5 0 01.67-.223L10 11.44l5.776-2.888a.5.5 0 11.448.894l-6 3a.5.5 0 01-.448 0l-6-3a.5.5 0 01-.223-.67z" clip-rule="evenodd"/>
-              </svg>
-        </a>
-    </div>
-    <!-- /jumbotron -->
-    <!-- Projects -->
-    <div class=" py-5" id="projects">
-        <div class="container">
-            <h2 class="ml-5 mt-1">Projects</h2>
-            <div class="row card-deck">
-                <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card h-100">
-                        <a href="projects/gallery/index.html" class="mt-5 card-pic">
-                            <img src="assets/gallery2.svg" class="card-img-top px-5" alt="Gallery asset info: gallery by Lil Squid from the Noun Project">
-                        </a>
-                        <div class="card-body text-decoration-none text-body">
-                            <a href="projects/gallery/index.html" class="mt-5">
-                                <h5 class="card-title">Interactive Photo Gallery</h5>
-                            </a>
-                            <p class="card-text">This project uses JQuery to create a searchable and navigatable photo gallery. It takes advantage of a Lightbox plugin to implement the gallery functionality.</p>
-                        </div>
-                        <div class="card-footer">
-                          <a href="https://github.com/legranster/fewd_project_5" target="_blank">
-                            <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
-                            <small class="text-muted">GitHub</small></a>
-                        </div>
-                      </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card h-100">
-                        <a href="projects/hangman/index.html" class="mt-5">
-                            <img src="assets/hangman.svg" class="card-img-top px-5" alt="Hangman by mynamepong from the Noun Project">
-                        </a>
-                        <div class="card-body text-decoration-none text-body">
-                            <a href="projects/hangman/index.html" class="mt-5">
-                                <h5 class="card-title">Hangman Project</h5>
-                            </a>
-                            <p class="card-text">A game built with JavaScript in which contestants must guess the letters in a phrase. 5 wrong guesses and you're out! This project uses JavaScript to implement the game logic.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/legranster/fewd_project_6" target="_blank">
-                                <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
-                                <small class="text-muted">GitHub</small></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card h-100">
-                        <a href="projects/dashboard/index.html" class="mt-5">
-                            <img src="assets/dashboard.svg" class="card-img-top px-5" alt="Dashboard by Eucalyp from the Noun Project">
-                        </a>
-                        <div class="card-body text-decoration-none text-body">
-                            <a href="projects/dashboard/index.html">
-                                <h5 class="card-title">WebApp Dashboard</h5>
-                            </a>
-                            <p class="card-text">This project simulates a company's webApp dashboard. It has graphs that track user interaction, a social stats section, a user activity section, a user messaging section, and a customizable settings panel. It uses JavaScript to handle the graphing application, alerts, employee search, and localstorage. </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/legranster/fewd_project_7" target="_blank">
-                                <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
-                                <small class="text-muted">GitHub</small></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card h-100">
-                        <a href="projects/directory/index.html" class="mt-5">
-                            <img src="assets/employee_directory.svg" class="card-img-top px-5" alt="Directory asset info: directory by Graphic Tigers from the Noun Project">
-                        </a>
-                        <div class="card-body text-decoration-none text-body">
-                            <a href="projects/directory/index.html">
-                                <h5 class="card-title">Employee Directory</h5>
-                            </a>
-                            <p class="card-text">An implementation of an employee directory that uses the Fetch API to request all user info. Implemented a modal system to display more employee information upon click, search functionality to search for employees via name, and click-through functionality within the modals.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/legranster/fewd_project_8" target="_blank">
-                                <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
-                                <small class="text-muted">GitHub</small></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4 py-3">
-                    <div class="card h-100">
-                        <a href="projects/jersey_city_pilates/index.html" class="mt-5">
-                            <img src="assets/pilates.svg" class="card-img-top px-5" alt="Pilates asset info: Pilates by Ayub Irawan from the Noun Project">
-                        </a>
-                        <div class="card-body text-decoration-none text-body">
-                            <a href="projects/jersey_city_pilates/index.html">
-                                <h5 class="card-title">Jersey City Pilates</h5>
-                            </a>
-                            <p class="card-text">A static website for Jersey City Pilates, a soon-to-come small business owned by my wife! Jersey City Pilates will deliver professional Pilates instruction right to your door.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/legranster/legranster.github.io/tree/master/jersey_city_pilates" target="_blank">
-                                <img class="pr-3" src="assets/github_mark_32px.png" alt="GitHub Link">
-                                <small class="text-muted">GitHub</small></a>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /projects -->
-    <!-- About -->
-    <hr>
-    <div class="container py-5" id="about">
-        <div class="row">
-            <div class="col-md lightgray">
-                <h2>About Manuel</h2>
-                <p>Manuel is an experienced Agilist looking to make the pivot to Software Development, with some experience in:</p>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                </ul>
-                <div class="container my-5 alert alert-dark contactCard">
-                    <div class="row">
-                        <div class="col mt-3">
-                            <h5>Contact Information:</h5>
-                        </div>
-                        <div class="container my-3">
-                            <div class="row">
-                                <svg class="bi bi-envelope mx-3" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M16 5H4a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V6a1 1 0 00-1-1zM4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4z" clip-rule="evenodd"/>
-                                    <path fill-rule="evenodd" d="M2.071 6.243a.5.5 0 01.686-.172L10 10.417l7.243-4.346a.5.5 0 11.514.858L10 11.583 2.243 6.93a.5.5 0 01-.172-.686z" clip-rule="evenodd"/>
-                                  </svg>
-                                  <a href="mailto:fakeemail@fakeaddress.com"><p>fakeemail@fakeaddress.com</p></a>
-                            </div>
-                            <div class="row">
-                                <svg class="bi bi-phone mx-3" width="1.5em" height="1.5em" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" d="M13 3H7a1 1 0 00-1 1v11a1 1 0 001 1h6a1 1 0 001-1V4a1 1 0 00-1-1zM7 2a2 2 0 00-2 2v11a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7z" clip-rule="evenodd"/>
-                                    <path fill-rule="evenodd" d="M10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
-                                  </svg>
-                                  <a>(787) 241-1552</a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-md-start my-3">
-                        <div class="col">
-                            <a href="https://www.linkedin.com/in/manuel-i-legrand/">
-                                <img class="img-fluid social" src="assets/linkedin_svg.svg" alt="LinkedIn">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="https://www.instagram.com/manuelandjulio/">
-                                <img class="img-fluid social" src="assets/insta_svg.svg" alt="Instagram">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="https://github.com/legranster">
-                                <img class="img-fluid social" src="assets/github_svg.svg" alt="GitHub">
-                            </a>
-                        </div>
-                        <div class="col">
-                            <a href="https://twitter.com/legranster">
-                                <img class="img-fluid social" src="assets/twitter_svg.svg" alt="GitHub">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center mt-5">
-                        <button type="button" class="btn btn-secondary btn-lg contact" id="contact2">Contact</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md d-flex justify-content-center align-items-center">
-                <img class="img-thumbnail" src="assets/headshot.jpg" alt="Manuel">
-            </div>
-        </div>
-    </div>
-    <!-- /about -->
-    <!-- footer -->
-    <nav class="navbar-expand-lg navbar navbar-dark" id="footer">
-        <div class="container">
-            <div class="navbar-nav navbar-expand">
-                <a class="nav-item nav-link mr-3" href="#projects">Projects</a>
-            </div>
-            <div class="navbar-nav navbar-expand">
-                <a href="#" class="nav-item nav-link">Back to Top</a>
-            </div>
-        </div>
-    </nav>
-      <!-- footer -->
-    <!-- Contact Form-->
 
-    <!-- /contact -->
-    <!-- Modal -->
-    <div id="modal"></div>
-    <!-- /modal -->
-    <!-- Optional JavaScript -->
-    <script src="js/modal.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+        <!-- <div id="time1">
+            <span class="digit" id="hr1">
+              00</span>
+            <span class="txt">Hr</span>
+            <span class="digit" id="min1">
+              00</span>
+            <span class="txt">Min</span>
+            <span class="digit" id="sec1">
+              00</span>
+            <span class="txt">Sec</span>
+            <span class="digit" id="count1">
+              00</span>
+        </div>
+        <div id="buttons">
+            <button class="btn" id="start1">
+              Start</button>
+            <button class="btn" id="stop1">
+              Stop</button>
+            <button class="btn" id="reset1">
+              Reset</button>
+        </div> -->
+        <button id="step1Submit">Submit Step 1 Results</button>
+        <p id="eval1ErrorText"></p>
+    </div>
+    
+    <button id="toggleResults">Show Results</button>
+    <div id="results">
+        <h3>Demographics Results: </h3>
+        <p id="nameResult"></p>
+        <p id="ageResult"></p>
+        <p id="genderResult"></p>
+        <p id="educationResult"></p>
+        <p id="diagnosisResult"></p>
+        <p id="medsResult"></p>
+        <h3>Evaluation Results: </h3>
+        <p id="OES"></p>
+        <p id="OTS"></p>
+        <p id="ZPS"></p>
+        <p id="notes"></p>
+
+    </div>
+    <script src="app.js"></script>
+</body>
 </html>
