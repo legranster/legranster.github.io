@@ -8,90 +8,98 @@
     <title>Zheimer Puzzles Evaluation</title>
 </head>
 <body>
-    <h1>Zheimer Puzzles Evaluation Form</h1>
-    <div id="demographics">
-        <div id="demoName">
-            <label for="name">Name: </label>
-            <input type="text" id="name" />
+    <header>
+        <a href="https://zheimerpuzzles.com"><img id="text-logo" src="images/zheimer-puzzles-letter-logo.png" alt="Zheimer Puzzles Logo"></a>
+        
+    </header>
+    <main>
+        <h1>Zheimer Puzzles Evaluation Form</h1>
+        <div id="demographics">
+            <div id="demoName" class="question">
+                <label for="name">Name: </label>
+                <input type="text" id="name" />
+            </div>
+            <div id="demoAge" class="question">
+                <label for="age">Age: </label>
+                <input type="number" id="age" />
+            </div>
+            <div id="demoGender" class="question">
+                <label for="gender">Gender: </label>
+                <select name="gender" id="gender">
+                    <option value="none">(Select an option)</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                    <option value="undisclosed">Prefer not to disclose</option>
+                </select>
+            </div>
+            <div id="demoEducation" class="question">
+                <label for="education">Education Level: </label>
+                <select name="education" id="education">
+                    <option value="none">(Select an option)</option>
+                    <option value="highSchool">High School</option>
+                    <option value="college">College</option>
+                    <option value="gradSchool">Graduate School</option>
+                    <option value="phd">Ph.D.</option>
+                </select>
+            </div>
+            <div id="demoDiagnosis" class="question">
+                <label for="diagnosis">Diagnosed Cognitive Impairment? </label>
+                <select name="diagnosis" id="diagnosis">
+                    <option value="none">(Select an option)</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div id="demoMedications" class="question">
+                <label for="meds">If diagnosed, which medication is the subject taking?</label>
+                <input type="text" id="meds" />
+            </div>    
+            <div class="button-div">
+                <button  id="submitDemographics">Continue</button>
+                <p id="error"></p>
+            </div>
+        </div> 
+        <div id="step1Instructions">
+            <h1>Step 1: Reflection Test</h1>
+            <h3>Instructions</h3>
+            <ul>
+                <li>(LEER EN SILENCIO) Abra el MEMO Kit. Saque el
+                    espejo del botiquín y ubique lo frente al usuario.
+                    Espere que el usuario conteste la pregunta antes de
+                    continuar a la próxima pregunta. Si el usuario no puede
+                    contestar alguna pregunta, pase a la próxima pregunta.
+                </li>
+                <li>Sujete el espejo frente a usted mismo y conteste las
+                    siguientes preguntas:
+                </li>
+                <ol>
+                    <li>Que ves en el espejo? ¿Quién es la persona en el
+                        reflejo?</li>
+                    <li>Mire el espejo y mencione en voz alta 5 objetos
+                        que pueda ver.</li>
+                    <li>Suelte el espejo colocándolo frente a usted.
+                        Mencione en voz alta los 5 objetos que menciono
+                        en orden inverso; comenzando con el ultimo
+                        objeto.</li>
+                </ol>
+            </ul>
+            <div class="button-div">
+                <button id="continueEval">Continue</button>
+            </div>
         </div>
-        <div id="demoAge">
-            <label for="age">Age: </label>
-            <input type="number" id="age" />
-        </div>
-        <div id="demoGender">
-            <label for="gender">Gender: </label>
-            <select name="gender" id="gender">
-                <option value="none">(Select an option)</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-                <option value="undisclosed">Prefer not to disclose</option>
-            </select>
-        </div>
-        <div id="demoEducation">
-            <label for="education">Education Level: </label>
-            <select name="education" id="education">
-                <option value="none">(Select an option)</option>
-                <option value="highSchool">High School</option>
-                <option value="college">College</option>
-                <option value="gradSchool">Graduate School</option>
-                <option value="phd">Ph.D.</option>
-            </select>
-        </div>
-        <div id="demoDiagnosis">
-            <label for="diagnosis">Diagnosed Cognitive Impairment? </label>
-            <select name="diagnosis" id="diagnosis">
-                <option value="none">(Select an option)</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
-        <div id="demoMedications">
-            <label for="meds">If diagnosed, which medication is the subject taking?</label>
-            <input type="text" id="meds" />
-        </div>
-        <button  id="submitDemographics">Continue</button> <br />
-        <p id="error"></p>
-    </div>
-    <div id="step1Instructions">
-        <h1>Step 1: Reflection Test</h1>
-        <h3>Instructions</h3>
-        <ul>
-            <li>(LEER EN SILENCIO) Abra el MEMO Kit. Saque el
-                espejo del botiquín y ubique lo frente al usuario.
-                Espere que el usuario conteste la pregunta antes de
-                continuar a la próxima pregunta. Si el usuario no puede
-                contestar alguna pregunta, pase a la próxima pregunta.
-            </li>
-            <li>Sujete el espejo frente a usted mismo y conteste las
-                siguientes preguntas:
-            </li>
-            <ol>
-                <li>Que ves en el espejo? ¿Quién es la persona en el
-                    reflejo?</li>
-                <li>Mire el espejo y mencione en voz alta 5 objetos
-                    que pueda ver.</li>
-                <li>Suelte el espejo colocándolo frente a usted.
-                    Mencione en voz alta los 5 objetos que menciono
-                    en orden inverso; comenzando con el ultimo
-                    objeto.</li>
-            </ol>
-        </ul>
-        <button id="continueEval">Continue</button>
-    </div>
-    <div id="step1Form">
-        <h1>Evaluation 1: Reflection Test</h1>
-        <div>
-            <h3>Preparation Time (seconds): </h3>
-            <input type="number" id="prepTime">
-        </div>
-        <div>
-            <h3>Evaluation Time (seconds): </h3>
-            <input type="number" id="evalTime">
-        </div>
-        <div>
-            <div>
-                <h3>General Observations: </h3>
+        <div id="step1Form">
+            <h1>Evaluation 1: Reflection Test</h1>
+            <div class="question">
+                <label for="prepTime">Preparation Time (seconds): </label>
+                <input type="number" id="prepTime">
+            </div>
+            <div class="question">
+                <label for="evalTime">Evaluation Time (seconds): </label>
+                <input type="number" id="evalTime">
+            </div>
+            <div class="question">
+                <label for="generalObservations"> General Observations: </label>
                 <select name="generalObservations" id="generalObservations">
                     <option value="0">(Select an Option)</option>
                     <option value="4">Recognizes him/herself immediately</option>
@@ -100,8 +108,8 @@
                     <option value="1">Did not recognize self in reflection</option>
                 </select>
             </div>
-            <div>
-                <h3>Instruction Compliance: </h3>
+            <div class="question">
+                <label for="instructionCompliance">Instruction Compliance: </label>
                 <select name="instructionCompliance" id="instructionCompliance">
                     <option value="0">(Select an Option)</option>
                     <option value="4">Followed Instructions</option>
@@ -110,8 +118,8 @@
                     <option value="1">Forgot Instructions</option>
                 </select>
             </div>
-            <div>
-                <h3>Emotional Reaction: </h3>
+            <div class="question">
+                <label for="emotionalReaction">Emotional Reaction: </label>
                 <select name="emotionalReaction" id="emotionalReaction">
                     <option value="0">(Select an Option)</option>
                     <option value="4">Enjoyed Exercise</option>
@@ -120,53 +128,67 @@
                     <option value="1">Frustrated / Angry</option>
                 </select>
             </div>
-            <div>
-                <h3>Additional Notes: </h3>
+            <div class="question">
+                <label for="additionalNotes1">Additional Notes: </label>
                 <input type="text" id="additionalNotes1">
             </div>
+            <div class="button-div">
+                <button id="step1Submit">Submit Step 1 Results</button>
+                <p id="eval1ErrorText"></p>
+            </div>
+            <!-- <div id="time1">
+                <span class="digit" id="hr1">
+                00</span>
+                <span class="txt">Hr</span>
+                <span class="digit" id="min1">
+                00</span>
+                <span class="txt">Min</span>
+                <span class="digit" id="sec1">
+                00</span>
+                <span class="txt">Sec</span>
+                <span class="digit" id="count1">
+                00</span>
+            </div>
+            <div id="buttons">
+                <button class="btn" id="start1">
+                Start</button>
+                <button class="btn" id="stop1">
+                Stop</button>
+                <button class="btn" id="reset1">
+                Reset</button>
+            </div> -->
+
         </div>
 
-        <!-- <div id="time1">
-            <span class="digit" id="hr1">
-              00</span>
-            <span class="txt">Hr</span>
-            <span class="digit" id="min1">
-              00</span>
-            <span class="txt">Min</span>
-            <span class="digit" id="sec1">
-              00</span>
-            <span class="txt">Sec</span>
-            <span class="digit" id="count1">
-              00</span>
+        <div class="button-div" id="resultsToggle">
+            <button id="toggleResults">Show Results</button>
         </div>
-        <div id="buttons">
-            <button class="btn" id="start1">
-              Start</button>
-            <button class="btn" id="stop1">
-              Stop</button>
-            <button class="btn" id="reset1">
-              Reset</button>
-        </div> -->
-        <button id="step1Submit">Submit Step 1 Results</button>
-        <p id="eval1ErrorText"></p>
-    </div>
+        
+        <div id="results">
+            <div id="resultsText">
+                <h3>Demographics Results: </h3>
+                <p id="nameResult"></p>
+                <p id="ageResult"></p>
+                <p id="genderResult"></p>
+                <p id="educationResult"></p>
+                <p id="diagnosisResult"></p>
+                <p id="medsResult"></p>
+                <h3>Evaluation Results: </h3>
+                <p id="OES"></p>
+                <p id="OTS"></p>
+                <p id="ZPS"></p>
+                <p id="notes"></p>
     
-    <button id="toggleResults">Show Results</button>
-    <div id="results">
-        <h3>Demographics Results: </h3>
-        <p id="nameResult"></p>
-        <p id="ageResult"></p>
-        <p id="genderResult"></p>
-        <p id="educationResult"></p>
-        <p id="diagnosisResult"></p>
-        <p id="medsResult"></p>
-        <h3>Evaluation Results: </h3>
-        <p id="OES"></p>
-        <p id="OTS"></p>
-        <p id="ZPS"></p>
-        <p id="notes"></p>
-
-    </div>
+            </div>
+            <div id="imageWrapper">
+                <img src="images/zheimer-prototype-logo-white.png" alt="Zheimer Logo" id="zheimerLogo">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright 2022 Zheimer Puzzles, a Health Technology Company from Puerto Rico.</p>
+    </footer>
+    
     <script src="app.js"></script>
 </body>
 </html>

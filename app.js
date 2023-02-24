@@ -26,7 +26,7 @@ window.smoothScroll = function(target) {
   
 
 
-
+// Submit Demographics Button
 document.querySelector("#submitDemographics").addEventListener("click", function(){
     var nameValue = document.getElementById("name").value;          
     var ageValue = document.getElementById("age").value;
@@ -57,15 +57,20 @@ document.querySelector("#submitDemographics").addEventListener("click", function
         document.getElementById('educationResult').textContent = 'Education: ' + educationValue;
         document.getElementById('diagnosisResult').textContent = 'Diagnosed: ' + diagnosisValue;
         document.getElementById('medsResult').textContent = 'Medications: ' + medsValue;
+        document.getElementById('demographics').style.display = "none";
+        document.getElementById('step1Instructions').style.display="block";
         smoothScroll(document.getElementById('step1Instructions'));
     }
 
 });
 
 document.querySelector('#continueEval').addEventListener("click", function(){
+    document.getElementById('step1Instructions').style.display="none";
+    document.getElementById('step1Form').style.display="block";
     smoothScroll(document.getElementById('step1Form'));
 })
 
+//timer JS needs tweaking
 // let startBtn1 = document.getElementById('start1');
 // let stopBtn1 = document.getElementById('stop1');
 // let resetBtn1 = document.getElementById('reset1');
@@ -149,7 +154,6 @@ var timeResults = [];
 var evalResults = [];
 var step1Submit = document.getElementById('step1Submit');
 step1Submit.addEventListener('click', function(){
-
     var prepTime = document.getElementById('prepTime').value;
     var evalTime = document.getElementById('evalTime').value;
     var observation = document.getElementById('generalObservations').value;
@@ -180,8 +184,12 @@ step1Submit.addEventListener('click', function(){
         document.getElementById('OTS').textContent =  "OTS: " + OTS;
         document.getElementById('ZPS').textContent = "Your Zheimer Puzzles Score Is: " + ZPS;
         document.getElementById('notes').textContent = 'Additional notes for Exercise 1: ' + notes;
-        step1Submit.style.display = 'none';
+
         smoothScroll(document.getElementById('toggleResults'));
+        step1Submit.style.display = 'none';
+        document.getElementById('step1Form').style.display = 'none';
+        document.getElementById('resultsToggle').style.display= 'block';
+
     }
 })
 
@@ -211,11 +219,6 @@ function calculateZPS(OES, OTS){
 var resultsSection = document.getElementById('results');
 var toggleResultsButton = document.getElementById('toggleResults');
 toggleResultsButton.addEventListener("click", function(){
-    if (resultsSection.style.display === 'none'){
-        resultsSection.style.display = 'block';
-        toggleResultsButton.textContent = "Hide Results";
-    } else {
-        resultsSection.style.display = 'none';
-        toggleResultsButton.textContent = "Show Results";
-    }
+        resultsSection.style.display = 'flex';
+        document.getElementById('resultsToggle').style.display= 'none';
 })
