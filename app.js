@@ -70,92 +70,117 @@ document.querySelector('#continueEval').addEventListener("click", function(){
     smoothScroll(document.getElementById('step1Form'));
 })
 
-//timer JS needs tweaking
-// let startBtn1 = document.getElementById('start1');
-// let stopBtn1 = document.getElementById('stop1');
-// let resetBtn1 = document.getElementById('reset1');
+// Timer 
+// stopwatch functions...
+var Stopwatch = function(elem, options) {
+    var timer = createTimer(),
+      startButton = createButton("start", start),
+      stopButton = createButton("stop", stop),
+      resetButton = createButton("reset", reset),
+      offset,
+      clock,
+      interval;
   
-// let hour = 00;
-// let minute = 00;
-// let second = 00;
-// let count = 00;
+    // default options
+    options = options || {};
+    options.delay = options.delay || 1;
   
-// startBtn1.addEventListener('click', function () {
-//     timer = true;
-//     stopWatch();
-// });
+    // append elements     
+    elem.appendChild(timer);
+    elem.appendChild(startButton);
+    elem.appendChild(stopButton);
+    elem.appendChild(resetButton);
   
-// stopBtn1.addEventListener('click', function () {
-//     timer = false;
-// });
+    // initialize
+    reset();
   
-// resetBtn1.addEventListener('click', function () {
-//     timer = false;
-//     hour = 0;
-//     minute = 0;
-//     second = 0;
-//     count = 0;
-//     document.getElementById('hr1').innerHTML = "00";
-//     document.getElementById('min1').innerHTML = "00";
-//     document.getElementById('sec1').innerHTML = "00";
-//     document.getElementById('count1').innerHTML = "00";
-// });
+    // private functions
+    function createTimer() {
+      return document.createElement("span");
+    }
   
-// function stopWatch() {
-//     if (timer) {
-//         count++;
+    function createButton(action, handler) {
+      var a = document.createElement("button");
+      a.id = action;
+      a.class = "btn";
+      a.innerHTML = action;
+      a.addEventListener("click", function(event) {
+        handler();
+        event.preventDefault();
+      });
+      return a;
+    }
   
-//         if (count == 100) {
-//             second++;
-//             count = 0;
-//         }
+    function start() {
+      if (!interval) {
+        offset = Date.now();
+        interval = setInterval(update, options.delay);
+      }
+    }
   
-//         if (second == 60) {
-//             minute++;
-//             second = 0;
-//         }
+    function stop() {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    }
   
-//         if (minute == 60) {
-//             hour++;
-//             minute = 0;
-//             second = 0;
-//         }
+    function reset() {
+      clock = 0;
+      render(0);
+    }
   
-//         let hrString = hour;
-//         let minString = minute;
-//         let secString = second;
-//         let countString = count;
+    function update() {
+      clock += delta();
+      render();
+    }
   
-//         if (hour < 10) {
-//             hrString = "0" + hrString;
-//         }
+    function render() {
+      var s = Math.floor(clock / 1000) % 60;
+      var ms = Math.floor(clock % 1000);
+      if (s < 10) {
+        s = "0" + s;
+      }
+      if (ms < 100) {
+        ms = "0" + ms;
+      }
+      if (ms < 10) {
+        ms = "0" + ms;
+      }
   
-//         if (minute < 10) {
-//             minString = "0" + minString;
-//         }
+      timer.innerHTML = s + ' sec' ; 
   
-//         if (second < 10) {
-//             secString = "0" + secString;
-//         }
+    }
   
-//         if (count < 10) {
-//             countString = "0" + countString;
-//         }
+    function delta() {
+      var now = Date.now(),
+        d = now - offset;
   
-//         document.getElementById('hr1').innerHTML = hrString;
-//         document.getElementById('min1').innerHTML = minString;
-//         document.getElementById('sec1').innerHTML = secString;
-//         document.getElementById('count1').innerHTML = countString;
-//         setTimeout(stopWatch, 10);
-//     }
-// }
+      offset = now;
+      return d;
+    }
+  
+    this.start = start;
+    this.stop = stop;
+    this.reset = reset;
+  };
+  
+  
+  var elems = document.getElementsByClassName("basic");
+  for (var i = 0, len = elems.length; i < len; i++) {
+    new Stopwatch(elems[i]);
+  }
+  
+  
 
+
+//final submit
 var timeResults = [];
 var evalResults = [];
 var step1Submit = document.getElementById('step1Submit');
 step1Submit.addEventListener('click', function(){
-    var prepTime = document.getElementById('prepTime').value;
-    var evalTime = document.getElementById('evalTime').value;
+    var prepTime = parseInt(document.getElementById('prepTime').firstElementChild.innerHTML);
+    var evalTime = parseInt(document.getElementById('evalTime').firstElementChild.innerHTML);
     var observation = document.getElementById('generalObservations').value;
     var compliance = document.getElementById('instructionCompliance').value;
     var reaction = document.getElementById('emotionalReaction').value;
@@ -212,7 +237,7 @@ function calculateOTS(timeArray){
 }
 
 function calculateZPS(OES, OTS){
-    var ZPS = (OES + OTS)/2;
+    var ZPS = (OES * 100)/OTS;
     return ZPS;
 }
 
